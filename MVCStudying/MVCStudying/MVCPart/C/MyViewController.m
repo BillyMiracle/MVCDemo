@@ -32,8 +32,9 @@
     [_myView.myButton addTarget:self action:@selector(pressLogin) forControlEvents:UIControlEventTouchUpInside];
     [_myView.addButton addTarget:self action:@selector(pressAdd) forControlEvents:UIControlEventTouchUpInside];
     
-    _myModel = [[MyModel alloc] init];
-    [_myModel myModelInit];
+//    _myModel = [[MyModel alloc] init];
+//    [_myModel myModelInit];
+    _myModel = [MyModel getModel];
     
     [self.view addSubview:_myView];
 }
@@ -61,8 +62,8 @@
 - (void)pressAdd {
     RegisterViewController *registerPage = [[RegisterViewController alloc] init];
     registerPage.modalPresentationStyle = UIModalPresentationFullScreen;
-    registerPage.nameArray = [_myModel.nameStringArray mutableCopy];
-    registerPage.keyArray = [_myModel.keyStringArray mutableCopy];
+//    registerPage.nameArray = [_myModel.nameStringArray mutableCopy];
+//    registerPage.keyArray = [_myModel.keyStringArray mutableCopy];
     [self presentViewController:registerPage animated:NO completion:nil];
 }
 

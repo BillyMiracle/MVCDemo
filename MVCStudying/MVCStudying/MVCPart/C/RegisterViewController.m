@@ -6,12 +6,13 @@
 //
 
 #import "RegisterViewController.h"
+#import "MyModel.h"
 
 @interface RegisterViewController ()
 
 @property (nonatomic, strong) RegisterView *registerView;
 @property (nonatomic, assign) NSInteger flag;
-
+@property (nonatomic, strong) MyModel *myModel;
 
 @end
 
@@ -23,6 +24,9 @@
     [_registerView.addButton addTarget:self action:@selector(pressAdd) forControlEvents:UIControlEventTouchUpInside];
     [_registerView.backButton addTarget:self action:@selector(pressBack) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_registerView];
+    
+    _myModel = [MyModel getModel];
+    
 }
 
 - (void)pressAdd {
@@ -33,8 +37,8 @@
         [self presentViewController:alert animated:NO completion:nil];
     } else {
         _flag = 0;
-        for (int i = 0; i < _nameArray.count; ++i) {
-            if ([_registerView.myTextField.text isEqualToString:_nameArray[i]]) {
+        for (int i = 0; i < _myModel.nameStringArray.count; ++i) {
+            if ([_registerView.myTextField.text isEqualToString:_myModel.nameStringArray[i]]) {
                 _flag = 1;
             }
         }

@@ -12,8 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface RegisterViewController : UIViewController
 
-@property (nonatomic, strong) NSMutableArray *nameArray;
-@property (nonatomic, strong) NSMutableArray *keyArray;
+//@property (nonatomic, strong) NSMutableArray *nameArray;
+//@property (nonatomic, strong) NSMutableArray *keyArray;
 
 @end
 

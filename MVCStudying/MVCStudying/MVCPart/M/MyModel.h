@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)myModelInit;
 - (void)myModelAddName:(NSString *)addName andKey:(NSString *)addkey;
++ (instancetype)getModel;//获取单例
 
 @end
 
